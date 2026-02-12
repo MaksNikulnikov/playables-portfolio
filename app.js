@@ -1,31 +1,33 @@
 ﻿const playables = [
   {
-    title: "Playable 1",
-    role: "Role: Gameplay/Frontend Engineer",
-    demoUrl: "https://example-1.github.io/",
+    title: "Playable 1: Garden Designer",
+    role: "Role: Solo developer (gameplay logic, UI flow, performance tuning)",
+    demoUrl: "https://maksnikulnikov.github.io/GardenDesigner/",
     media: [
       "./assets/playable1-01.png",
       "./assets/playable1-02.png",
       "./assets/playable1-03.png",
     ],
-    stack: "Three.js, GSAP, Vanilla JS, Vite",
-    constraints: "Fast initial load, mobile-friendly controls, lightweight runtime memory usage.",
+    stack: "Three.js, GSAP, Vite, Vanilla JS",
+    constraints:
+      "Fast first paint, stable frame pacing on mobile, clear onboarding for short playable sessions.",
     solutions:
-      "Asset caching, responsive camera limits, guided onboarding with spotlight, e2e coverage for core flow.",
+      "Onboarding spotlight with camera assist, GLTF asset cache + preload, dynamic interaction snapping, e2e coverage for core flow and mobile UX.",
   },
   {
-    title: "Playable 2",
-    role: "Role: Technical Artist / Frontend Engineer",
-    demoUrl: "https://example-2.github.io/",
+    title: "Playable 2: Playable Dice",
+    role: "Role: Solo developer (game systems, balancing, 3D feedback loop)",
+    demoUrl: "https://maksnikulnikov.github.io/playable-dice/",
     media: [
       "./assets/playable2-01.png",
       "./assets/playable2-02.png",
       "./assets/playable2-03.png",
     ],
-    stack: "Pixi/Phaser/Three (укажи финальный стек)",
-    constraints: "Payload size limit, animation smoothness on low-end devices, touch UX.",
+    stack: "Three.js, Vite, Vanilla JS",
+    constraints:
+      "Compact payload, responsive controls for desktop/mobile, readable reward loop in very short sessions.",
     solutions:
-      "Resize strategy per aspect ratio, structured asset pipeline, render-loop optimizations and interaction tuning.",
+      "Config-driven balancing profile, deterministic run-state orchestration, optimized reward VFX pipeline, runtime perf overlay and CI checks.",
   },
 ];
 
