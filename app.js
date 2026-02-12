@@ -1,27 +1,29 @@
-﻿const playables = [
+const playables = [
   {
     title: "Playable 1: Garden Designer",
-    role: "Role: Solo developer (gameplay logic, UI flow, performance tuning)",
+    role: "Role: Solo developer (gameplay systems, onboarding UX, performance tuning)",
     demoUrl: "https://maksnikulnikov.github.io/GardenDesigner/",
+    debugUrl: "https://maksnikulnikov.github.io/GardenDesigner/?debug=1",
     desktopMedia: ["./assets/playable1-01.png", "./assets/playable1-03.png"],
     mobileMedia: "./assets/playable1-02.png",
     stack: "Three.js, GSAP, Vite, Vanilla JS",
     constraints:
-      "Fast first paint, stable frame pacing on mobile, clear onboarding for short playable sessions.",
+      "Fast first paint, stable frame pacing on mobile, and clear onboarding for short playable sessions.",
     solutions:
-      "Onboarding spotlight with camera assist, GLTF asset cache + preload, dynamic interaction snapping, and e2e coverage for core flow and mobile UX.",
+      "Client-provided sound/3D asset pack integrated into a custom pipeline; all UI visuals and gameplay effects were designed and implemented independently.",
   },
   {
     title: "Playable 2: Playable Dice",
-    role: "Role: Solo developer (game systems, balancing, 3D feedback loop)",
+    role: "Role: Solo developer (procedural systems, simulation loop, 3D UX)",
     demoUrl: "https://maksnikulnikov.github.io/playable-dice/",
+    debugUrl: "https://maksnikulnikov.github.io/playable-dice/?debug=1",
     desktopMedia: ["./assets/playable2-01.png", "./assets/playable2-03.png"],
     mobileMedia: "./assets/playable2-02.png",
     stack: "Three.js, Vite, Vanilla JS",
     constraints:
-      "Compact payload, responsive controls for desktop/mobile, readable reward loop in very short sessions.",
+      "Compact payload, responsive controls on desktop/mobile, and a readable reward loop in very short sessions.",
     solutions:
-      "Config-driven balancing profile, deterministic run-state orchestration, optimized reward VFX pipeline, runtime perf overlay, and CI checks.",
+      "Project goal was to demonstrate procedural generation in Three.js: all models are generated in code, with no external physics engine and a custom lightweight native-JS physics approximation.",
   },
 ];
 
@@ -46,7 +48,10 @@ for (const item of playables) {
         <h2 class="card-title">${item.title}</h2>
         <p class="card-role">${item.role}</p>
       </div>
-      <a class="demo-link" href="${item.demoUrl}" target="_blank" rel="noreferrer">Play demo</a>
+      <div class="demo-actions">
+        <a class="demo-link" href="${item.demoUrl}" target="_blank" rel="noreferrer">Play demo</a>
+        <a class="demo-link demo-link-secondary" href="${item.debugUrl}" target="_blank" rel="noreferrer">Play demo + Debug</a>
+      </div>
     </div>
 
     <section class="media-layout">
