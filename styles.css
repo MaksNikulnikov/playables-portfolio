@@ -111,6 +111,12 @@ h1 {
   border: 1px solid rgba(122, 208, 255, 0.5);
 }
 
+.demo-link-tertiary {
+  color: #d9e6fb;
+  background: rgba(18, 31, 52, 0.88);
+  border: 1px solid rgba(158, 185, 222, 0.45);
+}
+
 .media-layout {
   display: grid;
   grid-template-columns: 2fr minmax(220px, 260px);

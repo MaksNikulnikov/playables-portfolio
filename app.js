@@ -4,6 +4,7 @@ const playables = [
     role: "Role: Solo developer (gameplay systems, onboarding UX, performance tuning)",
     demoUrl: "https://maksnikulnikov.github.io/GardenDesigner/",
     debugUrl: "https://maksnikulnikov.github.io/GardenDesigner/?debug=1",
+    codeUrl: "https://github.com/MaksNikulnikov/GardenDesigner",
     desktopMedia: ["./assets/playable1-01.png", "./assets/playable1-03.png"],
     mobileMedia: "./assets/playable1-02.png",
     stack: "Three.js, GSAP, Vite, Vanilla JS",
@@ -17,6 +18,7 @@ const playables = [
     role: "Role: Solo developer (procedural systems, simulation loop, 3D UX)",
     demoUrl: "https://maksnikulnikov.github.io/playable-dice/",
     debugUrl: "https://maksnikulnikov.github.io/playable-dice/?debug=1",
+    codeUrl: "https://github.com/MaksNikulnikov/playable-dice",
     desktopMedia: ["./assets/playable2-01.png", "./assets/playable2-03.png"],
     mobileMedia: "./assets/playable2-02.png",
     stack: "Three.js, Vite, Vanilla JS",
@@ -51,6 +53,11 @@ for (const item of playables) {
       <div class="demo-actions">
         <a class="demo-link" href="${item.demoUrl}" target="_blank" rel="noreferrer">Play demo</a>
         <a class="demo-link demo-link-secondary" href="${item.debugUrl}" target="_blank" rel="noreferrer">Play demo + Debug</a>
+        ${
+          item.codeUrl
+            ? `<a class="demo-link demo-link-tertiary" href="${item.codeUrl}" target="_blank" rel="noreferrer">View code</a>`
+            : ""
+        }
       </div>
     </div>
 
