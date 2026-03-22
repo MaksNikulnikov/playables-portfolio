@@ -125,6 +125,10 @@ h1 {
   align-items: start;
 }
 
+.media-layout-wide {
+  grid-template-columns: 1fr minmax(180px, 220px);
+}
+
 .media-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -153,12 +157,23 @@ h1 {
   gap: 6px;
 }
 
+.mobile-shot-wrap-note {
+  align-content: start;
+}
+
 .media-label {
   margin: 0;
   color: var(--accent);
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.orientation-note {
+  margin: 0;
+  color: #d9e5f7;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .meta {

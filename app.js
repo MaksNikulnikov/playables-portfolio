@@ -27,6 +27,18 @@ const playables = [
     solutions:
       "Project goal was to demonstrate procedural generation in Three.js: all models are generated in code, with no external physics engine and a custom lightweight native-JS physics approximation.",
   },
+  {
+    title: "Playable 3: Fortress Demo",
+    role: "Role: Solo developer (gameplay flow, UI adaptation, build/deployment polish)",
+    demoUrl: "https://maksnikulnikov.github.io/fortress_demo/",
+    codeUrl: "https://github.com/MaksNikulnikov/fortress_demo",
+    desktopMedia: ["./assets/playable3_01.png", "./assets/playable3_02.png"],
+    stack: "Cocos Creator 3.8.8, TypeScript",
+    constraints:
+      "Landscape-only presentation, responsive HUD on mobile widths, and a published web build under 5 MB.",
+    solutions:
+      "Gameplay flow is config-driven and tuned for short tutorialized sessions; HUD adaptation was implemented without moving battlefield elements relative to the background.",
+  },
 ];
 
 const root = document.getElementById("playables");
@@ -34,6 +46,8 @@ const root = document.getElementById("playables");
 for (const item of playables) {
   const card = document.createElement("article");
   card.className = "card";
+  const hasMobileShot = Boolean(item.mobileMedia);
+  const hasDebugLink = Boolean(item.debugUrl);
 
   const desktopMediaMarkup = item.desktopMedia
     .map(
@@ -52,7 +66,11 @@ for (const item of playables) {
       </div>
       <div class="demo-actions">
         <a class="demo-link" href="${item.demoUrl}" target="_blank" rel="noreferrer">Play demo</a>
-        <a class="demo-link demo-link-secondary" href="${item.debugUrl}" target="_blank" rel="noreferrer">Play demo + Debug</a>
+        ${
+          hasDebugLink
+            ? `<a class="demo-link demo-link-secondary" href="${item.debugUrl}" target="_blank" rel="noreferrer">Play demo + Debug</a>`
+            : ""
+        }
         ${
           item.codeUrl
             ? `<a class="demo-link demo-link-tertiary" href="${item.codeUrl}" target="_blank" rel="noreferrer">View code</a>`
@@ -61,14 +79,21 @@ for (const item of playables) {
       </div>
     </div>
 
-    <section class="media-layout">
+    <section class="media-layout${hasMobileShot ? "" : " media-layout-wide"}">
       <div class="media-grid">${desktopMediaMarkup}</div>
-      <div class="mobile-shot-wrap">
+      ${
+        hasMobileShot
+          ? `<div class="mobile-shot-wrap">
         <p class="media-label">Mobile shot</p>
         <a class="mobile-shot" href="${item.mobileMedia}" target="_blank" rel="noreferrer" aria-label="${item.title} mobile screenshot">
           <img src="${item.mobileMedia}" alt="${item.title} mobile screenshot" loading="lazy" />
         </a>
-      </div>
+      </div>`
+          : `<div class="mobile-shot-wrap mobile-shot-wrap-note">
+        <p class="media-label">Presentation</p>
+        <p class="orientation-note">Landscape-only playable</p>
+      </div>`
+      }
     </section>
 
     <section class="meta">

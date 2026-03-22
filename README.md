@@ -1,6 +1,6 @@
 ﻿# Playables Portfolio
 
-Public portfolio repository with two playable case studies.
+Public portfolio repository with three playable case studies.
 
 ## Local run
 
