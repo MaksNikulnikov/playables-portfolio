@@ -1,6 +1,31 @@
 const playables = [
   {
-    title: "Playable 1: Garden Designer",
+    title: "Playable 1: Fortress Demo",
+    role: "Role: Solo developer (gameplay flow, UI adaptation, build/deployment polish)",
+    demoUrl: "https://maksnikulnikov.github.io/fortress_demo/",
+    codeUrl: "https://github.com/MaksNikulnikov/fortress_demo",
+    desktopMedia: ["./assets/playable3_01.png", "./assets/playable3_02.png"],
+    stack: "Cocos Creator 3.8.8, TypeScript",
+    constraints:
+      "Landscape-only presentation, responsive HUD on mobile widths, and a published web build under 5 MB.",
+    solutions:
+      "Gameplay flow is config-driven and tuned for short tutorialized sessions; HUD adaptation was implemented without moving battlefield elements relative to the background.",
+  },
+  {
+    title: "Playable 2: Blast Puzzle Prototype",
+    role: "Role: Solo developer (game architecture, core mechanics, PixiJS presentation, QA)",
+    demoUrl: "https://maksnikulnikov.github.io/blast/",
+    codeUrl: "https://github.com/MaksNikulnikov/blast",
+    desktopMedia: ["./assets/blast-desktop-01.png", "./assets/blast-desktop-02.png"],
+    mobileMedia: "./assets/blast-mobile-01.png",
+    stack: "TypeScript, PixiJS 8, Vite, Vitest, Playwright, ESLint",
+    constraints:
+      "Blast puzzle prototype with portrait/landscape layouts, boosters, super-tiles, stable canvas rendering, and testable gameplay rules.",
+    solutions:
+      "The strongest architecture in this portfolio: renderer-agnostic core mechanics are separated from the presentation layer and Pixi adapter, with data-driven animation plans, an explicit composition root, unit-tested game rules, and smoke tests for runtime behavior.",
+  },
+  {
+    title: "Playable 3: Garden Designer",
     role: "Role: Solo developer (gameplay systems, onboarding UX, performance tuning)",
     demoUrl: "https://maksnikulnikov.github.io/GardenDesigner/",
     debugUrl: "https://maksnikulnikov.github.io/GardenDesigner/?debug=1",
@@ -14,7 +39,7 @@ const playables = [
       "Client-provided sound/3D asset pack integrated into a custom pipeline; all UI visuals and gameplay effects were designed and implemented independently.",
   },
   {
-    title: "Playable 2: Playable Dice",
+    title: "Playable 4: Playable Dice",
     role: "Role: Solo developer (procedural systems, simulation loop, 3D UX)",
     demoUrl: "https://maksnikulnikov.github.io/playable-dice/",
     debugUrl: "https://maksnikulnikov.github.io/playable-dice/?debug=1",
@@ -26,18 +51,6 @@ const playables = [
       "Compact payload, responsive controls on desktop/mobile, and a readable reward loop in very short sessions.",
     solutions:
       "Project goal was to demonstrate procedural generation in Three.js: all models are generated in code, with no external physics engine and a custom lightweight native-JS physics approximation.",
-  },
-  {
-    title: "Playable 3: Fortress Demo",
-    role: "Role: Solo developer (gameplay flow, UI adaptation, build/deployment polish)",
-    demoUrl: "https://maksnikulnikov.github.io/fortress_demo/",
-    codeUrl: "https://github.com/MaksNikulnikov/fortress_demo",
-    desktopMedia: ["./assets/playable3_01.png", "./assets/playable3_02.png"],
-    stack: "Cocos Creator 3.8.8, TypeScript",
-    constraints:
-      "Landscape-only presentation, responsive HUD on mobile widths, and a published web build under 5 MB.",
-    solutions:
-      "Gameplay flow is config-driven and tuned for short tutorialized sessions; HUD adaptation was implemented without moving battlefield elements relative to the background.",
   },
 ];
 
