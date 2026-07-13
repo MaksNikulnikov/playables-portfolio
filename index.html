@@ -23,6 +23,7 @@
         <span>Maksim Nikulnikov</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#showreel">Reel</a>
         <a href="#work">Work</a>
         <a href="#stack">Stack</a>
         <a href="https://github.com/MaksNikulnikov" target="_blank" rel="noreferrer">GitHub</a>
@@ -39,15 +40,31 @@
             responsive canvas UX, platform adapters, tests, release packaging, and public web deployments.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#showreel">Watch showreel</a>
             <a class="button button-primary" href="#work">View case studies</a>
             <a class="button button-secondary" href="https://github.com/MaksNikulnikov" target="_blank" rel="noreferrer">View GitHub</a>
           </div>
         </div>
 
-        <div class="hero-media" aria-label="Featured project screenshots">
-          <img class="hero-shot hero-shot-main" src="./assets/idle-breaker-desktop-01.png" alt="Idle Breaker Playable gameplay screenshot" />
-          <img class="hero-shot hero-shot-small" src="./assets/tower-balance-desktop-01.png" alt="Tower Balance gameplay screenshot" />
-          <img class="hero-shot hero-shot-phone" src="./assets/blast-mobile-01.png" alt="Blast Puzzle mobile screenshot" />
+        <div id="showreel" class="showreel-card" aria-label="Playable portfolio showreel">
+          <div class="showreel-meta">
+            <span>64 sec showreel</span>
+            <span>7 cases</span>
+          </div>
+          <video
+            class="showreel-video"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+            poster="./assets/showreel-poster.jpg?v=20260713"
+          >
+            <source src="./assets/showreel.webm?v=20260713" type="video/webm" />
+            <source src="./assets/showreel.mp4?v=20260713" type="video/mp4" />
+          </video>
+          <p class="showreel-caption">
+            PixiJS, Cocos Creator, Three.js, responsive portrait/landscape work, platform adapters, and testing.
+          </p>
         </div>
       </section>
 
