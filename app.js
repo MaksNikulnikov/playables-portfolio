@@ -128,6 +128,7 @@ const caseGrid = document.getElementById("case-grid");
 const filterRoot = document.getElementById("case-filters");
 const showreelVideo = document.getElementById("hero-showreel");
 const showreelToggle = document.querySelector("[data-showreel-toggle]");
+const mediaVersion = "20260713-6";
 
 const createStackMarkup = (stack) =>
   stack.map((item) => `<span class="chip">${item}</span>`).join("");
@@ -153,23 +154,27 @@ const createActionMarkup = (project) => `
 const createMediaMarkup = (project) => {
   const [primaryMedia, secondaryMedia] = project.desktopMedia;
   const mobileMedia = project.mobileMedia;
+  const versionMediaUrl = (url) => `${url}?v=${mediaVersion}`;
+  const primaryMediaUrl = versionMediaUrl(primaryMedia);
+  const secondaryMediaUrl = secondaryMedia ? versionMediaUrl(secondaryMedia) : null;
+  const mobileMediaUrl = mobileMedia ? versionMediaUrl(mobileMedia) : null;
 
   return `
     <div class="case-media">
-      <a class="media-link media-primary" href="${primaryMedia}" target="_blank" rel="noreferrer">
-        <img src="${primaryMedia}" alt="${project.title} desktop screenshot" loading="lazy" />
+      <a class="media-link media-primary" href="${primaryMediaUrl}" target="_blank" rel="noreferrer">
+        <img src="${primaryMediaUrl}" alt="${project.title} desktop screenshot" loading="lazy" />
       </a>
       ${
         secondaryMedia
-          ? `<a class="media-link media-secondary" href="${secondaryMedia}" target="_blank" rel="noreferrer">
-        <img src="${secondaryMedia}" alt="${project.title} additional desktop screenshot" loading="lazy" />
+          ? `<a class="media-link media-secondary" href="${secondaryMediaUrl}" target="_blank" rel="noreferrer">
+        <img src="${secondaryMediaUrl}" alt="${project.title} additional desktop screenshot" loading="lazy" />
       </a>`
           : ""
       }
       ${
         mobileMedia
-          ? `<a class="phone-preview" href="${mobileMedia}" target="_blank" rel="noreferrer">
-        <img src="${mobileMedia}" alt="${project.title} mobile screenshot" loading="lazy" />
+          ? `<a class="phone-preview" href="${mobileMediaUrl}" target="_blank" rel="noreferrer">
+        <img src="${mobileMediaUrl}" alt="${project.title} mobile screenshot" loading="lazy" />
       </a>`
           : `<div class="orientation-note">Landscape web build</div>`
       }
