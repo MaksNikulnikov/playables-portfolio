@@ -52,24 +52,6 @@ const projects = [
     ],
   },
   {
-    title: "Hidden Object",
-    type: "Phaser playable",
-    engine: "Phaser",
-    demoUrl: "https://maksnikulnikov.github.io/G5-GAME-TEST/",
-    debugUrl: "https://maksnikulnikov.github.io/G5-GAME-TEST/?debug=1",
-    codeUrl: "https://github.com/MaksNikulnikov/G5-GAME-TEST",
-    desktopMedia: ["./media/hidden-object-desktop-01.png", "./media/hidden-object-desktop-02.png"],
-    mobileMedia: "./media/hidden-object-mobile-01.png",
-    stack: ["Phaser 3", "Webpack", "Babel", "Responsive Canvas"],
-    summary:
-      "A hidden object playable with responsive portrait and landscape layouts, Phaser scenes, and a single-file web build for GitHub Pages.",
-    highlights: [
-      "Legacy Phaser code was refactored into config, layout, scene, and component boundaries without upgrading the engine.",
-      "Hidden object placements adapt between portrait and landscape while preserving the same mechanic.",
-      "Pages publishing now serves the playable index instead of rendering the README.",
-    ],
-  },
-  {
     title: "Slot Game",
     type: "Slot interface prototype",
     engine: "PixiJS",
@@ -140,13 +122,13 @@ const projects = [
   },
 ];
 
-const filters = ["All", "PixiJS", "Phaser", "Cocos", "Three.js"];
+const filters = ["All", "PixiJS", "Cocos", "Three.js"];
 
 const caseGrid = document.getElementById("case-grid");
 const filterRoot = document.getElementById("case-filters");
 const showreelVideo = document.getElementById("hero-showreel");
 const showreelToggle = document.querySelector("[data-showreel-toggle]");
-const mediaVersion = "20260713-7";
+const mediaVersion = "20260713-8";
 
 const createStackMarkup = (stack) =>
   stack.map((item) => `<span class="chip">${item}</span>`).join("");
