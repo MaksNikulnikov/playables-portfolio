@@ -6,8 +6,8 @@ const projects = [
     featured: true,
     demoUrl: "https://maksnikulnikov.github.io/idle-breaker-playable/",
     codeUrl: "https://github.com/MaksNikulnikov/idle-breaker-playable",
-    desktopMedia: ["./assets/idle-breaker-desktop-01.png", "./assets/idle-breaker-desktop-02.png"],
-    mobileMedia: "./assets/idle-breaker-mobile-01.png",
+    desktopMedia: ["./media/idle-breaker-desktop-01.png", "./media/idle-breaker-desktop-02.png"],
+    mobileMedia: "./media/idle-breaker-mobile-01.png",
     stack: ["Cocos Creator 3.8.6", "TypeScript", "Vitest", "ESLint"],
     summary:
       "A production-minded interactive web build with resource collection, weapon upgrades, destructible gates, Cocos scene contracts, and final MRAID/store flow.",
@@ -23,8 +23,8 @@ const projects = [
     engine: "PixiJS",
     demoUrl: "https://maksnikulnikov.github.io/tower-balance/",
     codeUrl: "https://github.com/MaksNikulnikov/tower-balance",
-    desktopMedia: ["./assets/tower-balance-desktop-01.png", "./assets/tower-balance-desktop-02.png"],
-    mobileMedia: "./assets/tower-balance-mobile-01.png",
+    desktopMedia: ["./media/tower-balance-desktop-01.png", "./media/tower-balance-desktop-02.png"],
+    mobileMedia: "./media/tower-balance-mobile-01.png",
     stack: ["TypeScript", "PixiJS 8", "Matter.js", "Vite", "Playwright", "Yandex Games"],
     summary:
       "A full interactive web app with responsive canvas rendering, height progression, physics collapse, localization, ads, and leaderboard adapters.",
@@ -40,8 +40,8 @@ const projects = [
     engine: "PixiJS",
     demoUrl: "https://maksnikulnikov.github.io/blast/",
     codeUrl: "https://github.com/MaksNikulnikov/blast",
-    desktopMedia: ["./assets/blast-desktop-01.png", "./assets/blast-desktop-02.png"],
-    mobileMedia: "./assets/blast-mobile-01.png",
+    desktopMedia: ["./media/blast-desktop-01.png", "./media/blast-desktop-02.png"],
+    mobileMedia: "./media/blast-mobile-01.png",
     stack: ["TypeScript", "PixiJS 8", "Vite", "Vitest", "Playwright"],
     summary:
       "A blast puzzle prototype with boosters, super-tiles, responsive layouts, testable rules, and stable canvas presentation.",
@@ -57,8 +57,8 @@ const projects = [
     engine: "PixiJS",
     demoUrl: "https://maksnikulnikov.github.io/slot-game/",
     codeUrl: "https://github.com/MaksNikulnikov/slot-game",
-    desktopMedia: ["./assets/slot-game-desktop-01.png", "./assets/slot-game-desktop-02.png"],
-    mobileMedia: "./assets/slot-game-mobile-01.png",
+    desktopMedia: ["./media/slot-game-desktop-01.png", "./media/slot-game-desktop-02.png"],
+    mobileMedia: "./media/slot-game-mobile-01.png",
     stack: ["TypeScript", "PixiJS 8", "GSAP", "Spine", "Webpack", "Vitest"],
     summary:
       "A Pixi slot interface with real loading progress, masked reels, server-authoritative spin results, audio, and Spine character states.",
@@ -74,7 +74,7 @@ const projects = [
     engine: "Cocos",
     demoUrl: "https://maksnikulnikov.github.io/fortress_demo/",
     codeUrl: "https://github.com/MaksNikulnikov/fortress_demo",
-    desktopMedia: ["./assets/playable3_01.png", "./assets/playable3_02.png"],
+    desktopMedia: ["./media/playable3_01.png", "./media/playable3_02.png"],
     stack: ["Cocos Creator 3.8.8", "TypeScript"],
     summary:
       "A compact landscape-only Cocos web build focused on tutorialized interaction flow, HUD adaptation, and published build polish.",
@@ -91,8 +91,8 @@ const projects = [
     demoUrl: "https://maksnikulnikov.github.io/GardenDesigner/",
     debugUrl: "https://maksnikulnikov.github.io/GardenDesigner/?debug=1",
     codeUrl: "https://github.com/MaksNikulnikov/GardenDesigner",
-    desktopMedia: ["./assets/playable1-01.png", "./assets/playable1-03.png"],
-    mobileMedia: "./assets/playable1-02.png",
+    desktopMedia: ["./media/playable1-01.png", "./media/playable1-03.png"],
+    mobileMedia: "./media/playable1-02.png",
     stack: ["Three.js", "GSAP", "Vite", "Vanilla JS"],
     summary:
       "A 3D garden design web prototype with onboarding, asset integration, mobile frame pacing, and custom UI feedback.",
@@ -109,8 +109,8 @@ const projects = [
     demoUrl: "https://maksnikulnikov.github.io/playable-dice/",
     debugUrl: "https://maksnikulnikov.github.io/playable-dice/?debug=1",
     codeUrl: "https://github.com/MaksNikulnikov/playable-dice",
-    desktopMedia: ["./assets/playable2-01.png", "./assets/playable2-03.png"],
-    mobileMedia: "./assets/playable2-02.png",
+    desktopMedia: ["./media/playable2-01.png", "./media/playable2-03.png"],
+    mobileMedia: "./media/playable2-02.png",
     stack: ["Three.js", "Vite", "Vanilla JS"],
     summary:
       "A procedural Three.js web prototype with generated models, responsive controls, and a compact reward loop for short sessions.",
@@ -126,6 +126,8 @@ const filters = ["All", "PixiJS", "Cocos", "Three.js"];
 
 const caseGrid = document.getElementById("case-grid");
 const filterRoot = document.getElementById("case-filters");
+const showreelVideo = document.getElementById("hero-showreel");
+const showreelToggle = document.querySelector("[data-showreel-toggle]");
 
 const createStackMarkup = (stack) =>
   stack.map((item) => `<span class="chip">${item}</span>`).join("");
@@ -235,3 +237,14 @@ const renderFilters = () => {
 renderFilters();
 renderProjects();
 setActiveFilter("All");
+
+showreelToggle?.addEventListener("click", () => {
+  showreelVideo.controls = true;
+  showreelVideo.loop = false;
+  showreelVideo.muted = false;
+  showreelVideo.currentTime = 0;
+  showreelToggle.classList.add("is-hidden");
+  showreelVideo.play().catch(() => {
+    showreelVideo.controls = true;
+  });
+});

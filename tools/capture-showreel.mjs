@@ -8,11 +8,11 @@ const require = createRequire(import.meta.url);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 const tmpDir = join(root, ".tmp-showreel");
-const assetsDir = join(root, "assets");
+const mediaDir = join(root, "media");
 const htmlPath = join(__dirname, "showreel-capture.html");
-const webmPath = join(assetsDir, "showreel.webm");
-const mp4Path = join(assetsDir, "showreel.mp4");
-const posterPath = join(assetsDir, "showreel-poster.jpg");
+const webmPath = join(mediaDir, "showreel.webm");
+const mp4Path = join(mediaDir, "showreel.mp4");
+const posterPath = join(mediaDir, "showreel-poster.jpg");
 
 const requirePlaywright = () => {
   try {
@@ -42,7 +42,7 @@ const run = (command, args) => {
 
 rmSync(tmpDir, { recursive: true, force: true });
 mkdirSync(tmpDir, { recursive: true });
-mkdirSync(assetsDir, { recursive: true });
+mkdirSync(mediaDir, { recursive: true });
 
 const { chromium } = requirePlaywright();
 const browser = await chromium.launch({ headless: true });
@@ -90,7 +90,7 @@ run(ffmpeg, [
   mp4Path,
 ]);
 
-run(ffmpeg, ["-y", "-ss", "00:00:04", "-i", mp4Path, "-frames:v", "1", "-q:v", "3", posterPath]);
+run(ffmpeg, ["-y", "-ss", "00:00:01", "-i", mp4Path, "-frames:v", "1", "-q:v", "3", posterPath]);
 
 console.log(`Wrote ${webmPath}`);
 console.log(`Wrote ${mp4Path}`);

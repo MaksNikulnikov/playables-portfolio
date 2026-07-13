@@ -11,7 +11,7 @@ Open `index.html` directly or serve with any static server.
 - `index.html` - page markup
 - `styles.css` - visual design
 - `app.js` - content model and rendering
-- `assets/` - screenshots and showreel media
+- `media/` - screenshots and showreel media
 - `tools/` - local media generation helpers
 
 ## Showreel
@@ -22,7 +22,7 @@ The hero showreel is generated from `tools/showreel-capture.html`:
 node tools/capture-showreel.mjs
 ```
 
-The script writes `assets/showreel.webm`, `assets/showreel.mp4`, and `assets/showreel-poster.jpg`.
+The script writes `media/showreel.webm`, `media/showreel.mp4`, and `media/showreel-poster.jpg`.
 Set `FFMPEG_PATH` if ffmpeg is not installed in one of the local fallback locations.
 
 ## Notes

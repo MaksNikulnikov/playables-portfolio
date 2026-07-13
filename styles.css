@@ -209,8 +209,8 @@ h1 {
 .showreel-card {
   position: relative;
   display: grid;
-  gap: 12px;
-  padding: 12px;
+  gap: 10px;
+  padding: 10px;
   background: var(--surface);
   border: 2px solid var(--line-strong);
   border-radius: 8px;
@@ -219,9 +219,9 @@ h1 {
 
 .showreel-card::before {
   position: absolute;
-  inset: -16px 34px auto auto;
-  width: 140px;
-  height: 30px;
+  inset: -10px 26px auto auto;
+  width: 104px;
+  height: 20px;
   background: var(--coral);
   border: 2px solid var(--line-strong);
   border-radius: 999px;
@@ -250,23 +250,84 @@ h1 {
   border-color: var(--line-strong);
 }
 
+.showreel-frame {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(183, 239, 70, 0.18), transparent 30%),
+    #11151f;
+  border: 2px solid var(--line-strong);
+  border-radius: 6px;
+}
+
 .showreel-video {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  overflow: hidden;
   background: #11151f;
-  border: 2px solid var(--line-strong);
-  border-radius: 6px;
   object-fit: cover;
 }
 
+.showreel-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px 13px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid var(--line-strong);
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 var(--line-strong);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 950;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.showreel-toggle:hover,
+.showreel-toggle:focus-visible {
+  background: var(--lime);
+  outline: none;
+}
+
+.showreel-toggle.is-hidden {
+  display: none;
+}
+
+.showreel-play-icon {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 11px solid var(--ink);
+}
+
 .showreel-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
   margin: 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
-  line-height: 1.48;
+  line-height: 1.42;
+}
+
+.showreel-caption strong {
+  display: block;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.22;
+}
+
+.showreel-caption span {
+  display: block;
+  margin-top: 3px;
 }
 
 .proof-strip {
@@ -717,6 +778,18 @@ h1 {
 
   .showreel-card {
     padding: 9px;
+  }
+
+  .showreel-caption {
+    grid-template-columns: 1fr;
+  }
+
+  .showreel-toggle {
+    justify-self: stretch;
+    justify-content: center;
+    min-height: 38px;
+    padding: 9px 11px;
+    font-size: 12px;
   }
 
   .proof-strip strong {

@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260713-3" />
+    <link rel="stylesheet" href="./styles.css?v=20260713-4" />
   </head>
   <body>
     <header class="site-header">
@@ -48,23 +48,35 @@
 
         <div id="showreel" class="showreel-card" aria-label="Frontend portfolio showreel">
           <div class="showreel-meta">
-            <span>64 sec showreel</span>
+            <span>Frontend reel</span>
+            <span>64 sec</span>
             <span>7 cases</span>
           </div>
-          <video
-            class="showreel-video"
-            controls
-            muted
-            playsinline
-            preload="metadata"
-            poster="./assets/showreel-poster.jpg?v=20260713-3"
-          >
-            <source src="./assets/showreel.webm?v=20260713-3" type="video/webm" />
-            <source src="./assets/showreel.mp4?v=20260713-3" type="video/mp4" />
-          </video>
-          <p class="showreel-caption">
-            Interactive frontend cases across PixiJS, Cocos Creator, Three.js, responsive UI, platform adapters, and testing.
-          </p>
+          <div class="showreel-frame">
+            <video
+              id="hero-showreel"
+              class="showreel-video"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="metadata"
+              poster="./media/showreel-poster.jpg?v=20260713-4"
+            >
+              <source src="./media/showreel.webm?v=20260713-4" type="video/webm" />
+              <source src="./media/showreel.mp4?v=20260713-4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="showreel-caption">
+            <div>
+              <strong>Interactive frontend range</strong>
+              <span>Canvas/WebGL, responsive UI, platform adapters, and testing.</span>
+            </div>
+            <button class="showreel-toggle" type="button" data-showreel-toggle aria-controls="hero-showreel">
+              <span class="showreel-play-icon" aria-hidden="true"></span>
+              <span>Watch reel</span>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -107,6 +119,6 @@
       <a href="#top">Back to top</a>
     </footer>
 
-    <script type="module" src="./app.js?v=20260713-3"></script>
+    <script type="module" src="./app.js?v=20260713-4"></script>
   </body>
 </html>
