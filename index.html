@@ -3,31 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playables Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Maksim Nikulnikov, a frontend and playable game developer working with TypeScript, PixiJS, Cocos Creator, and Three.js."
+    />
+    <title>Maksim Nikulnikov | Frontend & Playable Game Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260713-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260713-2" />
   </head>
   <body>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <header class="hero">
-      <p class="eyebrow">Interactive Web Playables</p>
-      <h1>Portfolio</h1>
-      <p class="subtitle">
-        Seven interactive game projects with focus on playable ad craft, game architecture, platform integration, responsive UX, and production-ready engineering quality.
-      </p>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Maksim Nikulnikov portfolio home">
+        <span class="brand-mark">MN</span>
+        <span>Maksim Nikulnikov</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="https://github.com/MaksNikulnikov" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
     </header>
 
-    <main id="playables" class="playables"></main>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Frontend / playable games / web builds</p>
+          <h1 id="hero-title">Maksim Nikulnikov builds playable web games.</h1>
+          <p class="subtitle">
+            TypeScript-heavy portfolio across PixiJS, Cocos Creator, and Three.js: compact game loops,
+            responsive canvas UX, platform adapters, tests, release packaging, and public web deployments.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#work">View case studies</a>
+            <a class="button button-secondary" href="https://github.com/MaksNikulnikov" target="_blank" rel="noreferrer">View GitHub</a>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-label="Featured project screenshots">
+          <img class="hero-shot hero-shot-main" src="./assets/idle-breaker-desktop-01.png" alt="Idle Breaker Playable gameplay screenshot" />
+          <img class="hero-shot hero-shot-small" src="./assets/tower-balance-desktop-01.png" alt="Tower Balance gameplay screenshot" />
+          <img class="hero-shot hero-shot-phone" src="./assets/blast-mobile-01.png" alt="Blast Puzzle mobile screenshot" />
+        </div>
+      </section>
+
+      <section id="stack" class="proof-strip" aria-label="Technical focus">
+        <div>
+          <strong>7</strong>
+          <span>case studies</span>
+        </div>
+        <div>
+          <strong>3</strong>
+          <span>game runtimes</span>
+        </div>
+        <div>
+          <strong>TS</strong>
+          <span>architecture first</span>
+        </div>
+        <div>
+          <strong>QA</strong>
+          <span>tests and release checks</span>
+        </div>
+      </section>
+
+      <section class="section-heading" aria-labelledby="work-title">
+        <p class="eyebrow">Selected work</p>
+        <h2 id="work-title">Playable projects with technical receipts.</h2>
+        <p>
+          Every case links to a live demo. The strongest projects also expose source code, tests,
+          platform adapters, and production notes.
+        </p>
+      </section>
+
+      <section id="work" class="work" aria-label="Portfolio case studies">
+        <div id="case-filters" class="filters" aria-label="Filter case studies"></div>
+        <div id="case-grid" class="case-grid"></div>
+      </section>
+    </main>
 
     <footer class="footer">
       <p>&copy; Maksim Nikulnikov</p>
+      <a href="#top">Back to top</a>
     </footer>
 
-    <script type="module" src="./app.js?v=20260713-1"></script>
+    <script type="module" src="./app.js?v=20260713-2"></script>
   </body>
 </html>

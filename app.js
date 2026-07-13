@@ -1,168 +1,237 @@
-const playables = [
+const projects = [
   {
-    title: "Case Study 1: Idle Breaker Playable",
-    role: "Role: Solo developer (Cocos gameplay systems, scene architecture, UI feedback, playable ad flow)",
+    title: "Idle Breaker Playable",
+    type: "Cocos playable ad",
+    engine: "Cocos",
+    featured: true,
     demoUrl: "https://maksnikulnikov.github.io/idle-breaker-playable/",
     codeUrl: "https://github.com/MaksNikulnikov/idle-breaker-playable",
     desktopMedia: ["./assets/idle-breaker-desktop-01.png", "./assets/idle-breaker-desktop-02.png"],
     mobileMedia: "./assets/idle-breaker-mobile-01.png",
-    stack: "Cocos Creator 3.8.6, TypeScript, Vitest, ESLint, Prettier",
-    constraints:
-      "Playable ad loop with three melee weapon levels, two resource kinds, upgrade station progression, a destructible exit gate, desktop/mobile controls, and final store/MRAID action.",
-    solutions:
-      "The strongest Cocos case in this portfolio: gameplay progression is modeled in a tested domain state machine while Cocos components own scene contracts, colliders, prefab feedback, HUD, target hints, and completion flow. Domain and application layers are kept free of Cocos imports through lint rules.",
+    stack: ["Cocos Creator 3.8.6", "TypeScript", "Vitest", "ESLint"],
+    summary:
+      "A production-minded playable ad loop with resource collection, weapon upgrades, destructible gates, Cocos scene contracts, and final MRAID/store flow.",
+    highlights: [
+      "Tested domain state machine separated from scene-facing Cocos components.",
+      "Prefab-driven resources, hit feedback, HUD, target hints, and completion flow.",
+      "Desktop and mobile controls with a small build-oriented architecture.",
+    ],
   },
   {
-    title: "Case Study 2: Tower Balance",
-    role: "Role: Solo developer (hypercasual game loop, PixiJS presentation, physics collapse, Yandex Games integration)",
+    title: "Tower Balance",
+    type: "Hypercasual web game",
+    engine: "PixiJS",
     demoUrl: "https://maksnikulnikov.github.io/tower-balance/",
     codeUrl: "https://github.com/MaksNikulnikov/tower-balance",
     desktopMedia: ["./assets/tower-balance-desktop-01.png", "./assets/tower-balance-desktop-02.png"],
     mobileMedia: "./assets/tower-balance-mobile-01.png",
-    stack: "TypeScript, PixiJS 8, Matter.js, Vite, Playwright, Yandex Games SDK adapter",
-    constraints:
-      "A full hypercasual game rather than a short playable: responsive canvas, height-based difficulty, collapse presentation, audio/settings persistence, localization, ads-only release flow, and leaderboard support for Yandex Games.",
-    solutions:
-      "Platform behavior is isolated behind browser/Yandex adapters with local mock ads, auth, leaderboards, and pause/resume handling. Release work is automated through build, screenshot/video capture, packaging, audit scripts, and Playwright visual coverage.",
+    stack: ["TypeScript", "PixiJS 8", "Matter.js", "Vite", "Playwright", "Yandex Games"],
+    summary:
+      "A full hypercasual game with responsive canvas rendering, height progression, physics collapse, localization, ads, and leaderboard adapters.",
+    highlights: [
+      "Browser and Yandex platform adapters isolate ads, auth, leaderboards, language, and pause/resume.",
+      "Release scripts cover screenshots, video capture, packaging, and Yandex build audit.",
+      "Playwright visual coverage keeps layout and runtime behavior reviewable.",
+    ],
   },
   {
-    title: "Case Study 3: Blast Puzzle Prototype",
-    role: "Role: Solo developer (game architecture, core mechanics, PixiJS presentation, QA)",
+    title: "Blast Puzzle Prototype",
+    type: "Puzzle prototype",
+    engine: "PixiJS",
     demoUrl: "https://maksnikulnikov.github.io/blast/",
     codeUrl: "https://github.com/MaksNikulnikov/blast",
     desktopMedia: ["./assets/blast-desktop-01.png", "./assets/blast-desktop-02.png"],
     mobileMedia: "./assets/blast-mobile-01.png",
-    stack: "TypeScript, PixiJS 8, Vite, Vitest, Playwright, ESLint",
-    constraints:
-      "Blast puzzle prototype with portrait/landscape layouts, boosters, super-tiles, stable canvas rendering, and testable gameplay rules.",
-    solutions:
-      "Renderer-agnostic core mechanics are separated from the presentation layer and Pixi adapter, with data-driven animation plans, an explicit composition root, unit-tested game rules, and smoke tests for runtime behavior.",
+    stack: ["TypeScript", "PixiJS 8", "Vite", "Vitest", "Playwright"],
+    summary:
+      "A blast puzzle prototype with boosters, super-tiles, responsive layouts, testable rules, and stable canvas presentation.",
+    highlights: [
+      "Renderer-agnostic core mechanics are separated from the Pixi presentation layer.",
+      "Animation plans are data-driven and composed through an explicit app boundary.",
+      "Unit and smoke tests focus on gameplay rules and runtime behavior.",
+    ],
   },
   {
-    title: "Case Study 4: Slot Game",
-    role: "Role: Solo developer (slot game model, PixiJS rendering, GSAP reels, asset pipeline, audio)",
+    title: "Slot Game",
+    type: "Playable slot flow",
+    engine: "PixiJS",
     demoUrl: "https://maksnikulnikov.github.io/slot-game/",
     codeUrl: "https://github.com/MaksNikulnikov/slot-game",
     desktopMedia: ["./assets/slot-game-desktop-01.png", "./assets/slot-game-desktop-02.png"],
     mobileMedia: "./assets/slot-game-mobile-01.png",
-    stack: "TypeScript, PixiJS 8, GSAP, Spine, Webpack, Vitest, ESLint",
-    constraints:
-      "Playable slot flow with real loading progress, responsive Pixi scene, masked reel strips, audio, Spine character states, and server-authoritative spin results.",
-    solutions:
-      "Core slot rules, state machine, and mock server contracts stay independent from Pixi, Spine, DOM, GSAP, and audio APIs. The app layer talks to renderer/audio/session interfaces, while presentation adapters handle Pixi views, GSAP reel animation, generated atlases, and Web Audio.",
+    stack: ["TypeScript", "PixiJS 8", "GSAP", "Spine", "Webpack", "Vitest"],
+    summary:
+      "A Pixi slot playable with real loading progress, masked reels, server-authoritative spin results, audio, and Spine character states.",
+    highlights: [
+      "Core slot model and state machine avoid Pixi, GSAP, Spine, DOM, and audio imports.",
+      "Renderer, audio, and session interfaces keep application orchestration testable.",
+      "Manifest-driven atlas generation turns source PNGs into runtime Pixi spritesheets.",
+    ],
   },
   {
-    title: "Case Study 5: Fortress Demo",
-    role: "Role: Solo developer (gameplay flow, UI adaptation, build/deployment polish)",
+    title: "Fortress Demo",
+    type: "Cocos playable demo",
+    engine: "Cocos",
     demoUrl: "https://maksnikulnikov.github.io/fortress_demo/",
     codeUrl: "https://github.com/MaksNikulnikov/fortress_demo",
     desktopMedia: ["./assets/playable3_01.png", "./assets/playable3_02.png"],
-    stack: "Cocos Creator 3.8.8, TypeScript",
-    constraints:
-      "Landscape-only presentation, responsive HUD on mobile widths, and a published web build under 5 MB.",
-    solutions:
-      "Gameplay flow is config-driven and tuned for short tutorialized sessions; HUD adaptation was implemented without moving battlefield elements relative to the background.",
+    stack: ["Cocos Creator 3.8.8", "TypeScript"],
+    summary:
+      "A compact landscape-only Cocos playable focused on tutorialized gameplay flow, HUD adaptation, and published build polish.",
+    highlights: [
+      "Config-driven gameplay flow tuned for short sessions.",
+      "Responsive HUD adaptation without shifting battlefield composition.",
+      "Published web build kept under a tight payload budget.",
+    ],
   },
   {
-    title: "Case Study 6: Garden Designer",
-    role: "Role: Solo developer (gameplay systems, onboarding UX, performance tuning)",
+    title: "Garden Designer",
+    type: "3D playable prototype",
+    engine: "Three.js",
     demoUrl: "https://maksnikulnikov.github.io/GardenDesigner/",
     debugUrl: "https://maksnikulnikov.github.io/GardenDesigner/?debug=1",
     codeUrl: "https://github.com/MaksNikulnikov/GardenDesigner",
     desktopMedia: ["./assets/playable1-01.png", "./assets/playable1-03.png"],
     mobileMedia: "./assets/playable1-02.png",
-    stack: "Three.js, GSAP, Vite, Vanilla JS",
-    constraints:
-      "Fast first paint, stable frame pacing on mobile, and clear onboarding for short playable sessions.",
-    solutions:
-      "Client-provided sound/3D asset pack integrated into a custom pipeline; all UI visuals and gameplay effects were designed and implemented independently.",
+    stack: ["Three.js", "GSAP", "Vite", "Vanilla JS"],
+    summary:
+      "A 3D garden design playable with onboarding, asset integration, mobile frame pacing, and custom UI/gameplay feedback.",
+    highlights: [
+      "Client asset pack integrated into a custom web pipeline.",
+      "Onboarding and effects are built for short playable sessions.",
+      "Debug mode keeps tuning and review accessible in the browser.",
+    ],
   },
   {
-    title: "Case Study 7: Playable Dice",
-    role: "Role: Solo developer (procedural systems, simulation loop, 3D UX)",
+    title: "Playable Dice",
+    type: "Procedural 3D playable",
+    engine: "Three.js",
     demoUrl: "https://maksnikulnikov.github.io/playable-dice/",
     debugUrl: "https://maksnikulnikov.github.io/playable-dice/?debug=1",
     codeUrl: "https://github.com/MaksNikulnikov/playable-dice",
     desktopMedia: ["./assets/playable2-01.png", "./assets/playable2-03.png"],
     mobileMedia: "./assets/playable2-02.png",
-    stack: "Three.js, Vite, Vanilla JS",
-    constraints:
-      "Compact payload, responsive controls on desktop/mobile, and a readable reward loop in very short sessions.",
-    solutions:
-      "Project goal was to demonstrate procedural generation in Three.js: all models are generated in code, with no external physics engine and a custom lightweight native-JS physics approximation.",
+    stack: ["Three.js", "Vite", "Vanilla JS"],
+    summary:
+      "A procedural Three.js playable with generated models, responsive controls, and a compact reward loop for short sessions.",
+    highlights: [
+      "All models are generated in code with no external physics engine.",
+      "Custom lightweight physics approximation keeps the runtime small.",
+      "Debug mode helps inspect tuning and gameplay state.",
+    ],
   },
 ];
 
-const root = document.getElementById("playables");
+const filters = ["All", "PixiJS", "Cocos", "Three.js"];
 
-for (const item of playables) {
-  const card = document.createElement("article");
-  card.className = "card";
-  const hasMobileShot = Boolean(item.mobileMedia);
-  const hasDebugLink = Boolean(item.debugUrl);
+const caseGrid = document.getElementById("case-grid");
+const filterRoot = document.getElementById("case-filters");
 
-  const desktopMediaMarkup = item.desktopMedia
-    .map(
-      (src, idx) => `
-      <a href="${src}" target="_blank" rel="noreferrer" aria-label="${item.title} desktop media ${idx + 1}">
-        <img src="${src}" alt="${item.title} desktop media ${idx + 1}" loading="lazy" />
-      </a>`
-    )
-    .join("");
+const createStackMarkup = (stack) =>
+  stack.map((item) => `<span class="chip">${item}</span>`).join("");
 
-  card.innerHTML = `
-    <div class="card-head">
-      <div>
-        <h2 class="card-title">${item.title}</h2>
-        <p class="card-role">${item.role}</p>
-      </div>
-      <div class="demo-actions">
-        <a class="demo-link" href="${item.demoUrl}" target="_blank" rel="noreferrer">Play demo</a>
-        ${
-          hasDebugLink
-            ? `<a class="demo-link demo-link-secondary" href="${item.debugUrl}" target="_blank" rel="noreferrer">Play demo + Debug</a>`
-            : ""
-        }
-        ${
-          item.codeUrl
-            ? `<a class="demo-link demo-link-tertiary" href="${item.codeUrl}" target="_blank" rel="noreferrer">View code</a>`
-            : ""
-        }
-      </div>
-    </div>
+const createHighlightMarkup = (highlights) =>
+  highlights.map((item) => `<li>${item}</li>`).join("");
 
-    <section class="media-layout${hasMobileShot ? "" : " media-layout-wide"}">
-      <div class="media-grid">${desktopMediaMarkup}</div>
+const createActionMarkup = (project) => `
+  <div class="case-actions">
+    <a class="button button-primary" href="${project.demoUrl}" target="_blank" rel="noreferrer">Play demo</a>
+    ${
+      project.debugUrl
+        ? `<a class="button button-secondary" href="${project.debugUrl}" target="_blank" rel="noreferrer">Debug</a>`
+        : ""
+    }
+    ${
+      project.codeUrl
+        ? `<a class="button button-secondary" href="${project.codeUrl}" target="_blank" rel="noreferrer">Source</a>`
+        : ""
+    }
+  </div>`;
+
+const createMediaMarkup = (project) => {
+  const [primaryMedia, secondaryMedia] = project.desktopMedia;
+  const mobileMedia = project.mobileMedia;
+
+  return `
+    <div class="case-media">
+      <a class="media-link media-primary" href="${primaryMedia}" target="_blank" rel="noreferrer">
+        <img src="${primaryMedia}" alt="${project.title} desktop screenshot" loading="lazy" />
+      </a>
       ${
-        hasMobileShot
-          ? `<div class="mobile-shot-wrap">
-        <p class="media-label">Mobile shot</p>
-        <a class="mobile-shot" href="${item.mobileMedia}" target="_blank" rel="noreferrer" aria-label="${item.title} mobile screenshot">
-          <img src="${item.mobileMedia}" alt="${item.title} mobile screenshot" loading="lazy" />
-        </a>
-      </div>`
-          : `<div class="mobile-shot-wrap mobile-shot-wrap-note">
-        <p class="media-label">Presentation</p>
-        <p class="orientation-note">Landscape-only playable</p>
-      </div>`
+        secondaryMedia
+          ? `<a class="media-link media-secondary" href="${secondaryMedia}" target="_blank" rel="noreferrer">
+        <img src="${secondaryMedia}" alt="${project.title} additional desktop screenshot" loading="lazy" />
+      </a>`
+          : ""
       }
-    </section>
+      ${
+        mobileMedia
+          ? `<a class="phone-preview" href="${mobileMedia}" target="_blank" rel="noreferrer">
+        <img src="${mobileMedia}" alt="${project.title} mobile screenshot" loading="lazy" />
+      </a>`
+          : `<div class="orientation-note">Landscape web build</div>`
+      }
+    </div>`;
+};
 
-    <section class="meta">
-      <div class="meta-block">
-        <h3>Stack</h3>
-        <p>${item.stack}</p>
+const createProjectCard = (project, index) => {
+  const article = document.createElement("article");
+  article.className = `case-card${project.featured ? " case-card-featured" : ""}`;
+  article.dataset.engine = project.engine;
+  article.style.setProperty("--case-index", String(index));
+
+  article.innerHTML = `
+    ${createMediaMarkup(project)}
+    <div class="case-copy">
+      <div class="case-kicker">
+        <span>${project.engine}</span>
+        <span>${project.type}</span>
       </div>
-      <div class="meta-block">
-        <h3>Constraints</h3>
-        <p>${item.constraints}</p>
-      </div>
-      <div class="meta-block">
-        <h3>Interesting solutions</h3>
-        <p>${item.solutions}</p>
-      </div>
-    </section>
+      <h3>${project.title}</h3>
+      <p>${project.summary}</p>
+      <div class="chip-list">${createStackMarkup(project.stack)}</div>
+      <ul class="case-highlights">${createHighlightMarkup(project.highlights)}</ul>
+      ${createActionMarkup(project)}
+    </div>
   `;
 
-  root.appendChild(card);
-}
+  return article;
+};
+
+const renderProjects = () => {
+  caseGrid.replaceChildren(...projects.map(createProjectCard));
+};
+
+const setActiveFilter = (filter) => {
+  const cards = [...caseGrid.querySelectorAll(".case-card")];
+  const buttons = [...filterRoot.querySelectorAll("button")];
+
+  for (const button of buttons) {
+    const active = button.dataset.filter === filter;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  }
+
+  for (const card of cards) {
+    const visible = filter === "All" || card.dataset.engine === filter;
+    card.hidden = !visible;
+  }
+};
+
+const renderFilters = () => {
+  filterRoot.replaceChildren(
+    ...filters.map((filter) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.filter = filter;
+      button.textContent = filter;
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", () => setActiveFilter(filter));
+      return button;
+    }),
+  );
+};
+
+renderFilters();
+renderProjects();
+setActiveFilter("All");
