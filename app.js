@@ -1,6 +1,58 @@
 const playables = [
   {
-    title: "Playable 1: Fortress Demo",
+    title: "Case Study 1: Idle Breaker Playable",
+    role: "Role: Solo developer (Cocos gameplay systems, scene architecture, UI feedback, playable ad flow)",
+    demoUrl: "https://maksnikulnikov.github.io/idle-breaker-playable/",
+    codeUrl: "https://github.com/MaksNikulnikov/idle-breaker-playable",
+    desktopMedia: ["./assets/idle-breaker-desktop-01.png", "./assets/idle-breaker-desktop-02.png"],
+    mobileMedia: "./assets/idle-breaker-mobile-01.png",
+    stack: "Cocos Creator 3.8.6, TypeScript, Vitest, ESLint, Prettier",
+    constraints:
+      "Playable ad loop with three melee weapon levels, two resource kinds, upgrade station progression, a destructible exit gate, desktop/mobile controls, and final store/MRAID action.",
+    solutions:
+      "The strongest Cocos case in this portfolio: gameplay progression is modeled in a tested domain state machine while Cocos components own scene contracts, colliders, prefab feedback, HUD, target hints, and completion flow. Domain and application layers are kept free of Cocos imports through lint rules.",
+  },
+  {
+    title: "Case Study 2: Tower Balance",
+    role: "Role: Solo developer (hypercasual game loop, PixiJS presentation, physics collapse, Yandex Games integration)",
+    demoUrl: "https://maksnikulnikov.github.io/tower-balance/",
+    codeUrl: "https://github.com/MaksNikulnikov/tower-balance",
+    desktopMedia: ["./assets/tower-balance-desktop-01.png", "./assets/tower-balance-desktop-02.png"],
+    mobileMedia: "./assets/tower-balance-mobile-01.png",
+    stack: "TypeScript, PixiJS 8, Matter.js, Vite, Playwright, Yandex Games SDK adapter",
+    constraints:
+      "A full hypercasual game rather than a short playable: responsive canvas, height-based difficulty, collapse presentation, audio/settings persistence, localization, ads-only release flow, and leaderboard support for Yandex Games.",
+    solutions:
+      "Platform behavior is isolated behind browser/Yandex adapters with local mock ads, auth, leaderboards, and pause/resume handling. Release work is automated through build, screenshot/video capture, packaging, audit scripts, and Playwright visual coverage.",
+  },
+  {
+    title: "Case Study 3: Blast Puzzle Prototype",
+    role: "Role: Solo developer (game architecture, core mechanics, PixiJS presentation, QA)",
+    demoUrl: "https://maksnikulnikov.github.io/blast/",
+    codeUrl: "https://github.com/MaksNikulnikov/blast",
+    desktopMedia: ["./assets/blast-desktop-01.png", "./assets/blast-desktop-02.png"],
+    mobileMedia: "./assets/blast-mobile-01.png",
+    stack: "TypeScript, PixiJS 8, Vite, Vitest, Playwright, ESLint",
+    constraints:
+      "Blast puzzle prototype with portrait/landscape layouts, boosters, super-tiles, stable canvas rendering, and testable gameplay rules.",
+    solutions:
+      "Renderer-agnostic core mechanics are separated from the presentation layer and Pixi adapter, with data-driven animation plans, an explicit composition root, unit-tested game rules, and smoke tests for runtime behavior.",
+  },
+  {
+    title: "Case Study 4: Slot Game",
+    role: "Role: Solo developer (slot game model, PixiJS rendering, GSAP reels, asset pipeline, audio)",
+    demoUrl: "https://maksnikulnikov.github.io/slot-game/",
+    codeUrl: "https://github.com/MaksNikulnikov/slot-game",
+    desktopMedia: ["./assets/slot-game-desktop-01.png", "./assets/slot-game-desktop-02.png"],
+    mobileMedia: "./assets/slot-game-mobile-01.png",
+    stack: "TypeScript, PixiJS 8, GSAP, Spine, Webpack, Vitest, ESLint",
+    constraints:
+      "Playable slot flow with real loading progress, responsive Pixi scene, masked reel strips, audio, Spine character states, and server-authoritative spin results.",
+    solutions:
+      "Core slot rules, state machine, and mock server contracts stay independent from Pixi, Spine, DOM, GSAP, and audio APIs. The app layer talks to renderer/audio/session interfaces, while presentation adapters handle Pixi views, GSAP reel animation, generated atlases, and Web Audio.",
+  },
+  {
+    title: "Case Study 5: Fortress Demo",
     role: "Role: Solo developer (gameplay flow, UI adaptation, build/deployment polish)",
     demoUrl: "https://maksnikulnikov.github.io/fortress_demo/",
     codeUrl: "https://github.com/MaksNikulnikov/fortress_demo",
@@ -12,20 +64,7 @@ const playables = [
       "Gameplay flow is config-driven and tuned for short tutorialized sessions; HUD adaptation was implemented without moving battlefield elements relative to the background.",
   },
   {
-    title: "Playable 2: Blast Puzzle Prototype",
-    role: "Role: Solo developer (game architecture, core mechanics, PixiJS presentation, QA)",
-    demoUrl: "https://maksnikulnikov.github.io/blast/",
-    codeUrl: "https://github.com/MaksNikulnikov/blast",
-    desktopMedia: ["./assets/blast-desktop-01.png", "./assets/blast-desktop-02.png"],
-    mobileMedia: "./assets/blast-mobile-01.png",
-    stack: "TypeScript, PixiJS 8, Vite, Vitest, Playwright, ESLint",
-    constraints:
-      "Blast puzzle prototype with portrait/landscape layouts, boosters, super-tiles, stable canvas rendering, and testable gameplay rules.",
-    solutions:
-      "The strongest architecture in this portfolio: renderer-agnostic core mechanics are separated from the presentation layer and Pixi adapter, with data-driven animation plans, an explicit composition root, unit-tested game rules, and smoke tests for runtime behavior.",
-  },
-  {
-    title: "Playable 3: Garden Designer",
+    title: "Case Study 6: Garden Designer",
     role: "Role: Solo developer (gameplay systems, onboarding UX, performance tuning)",
     demoUrl: "https://maksnikulnikov.github.io/GardenDesigner/",
     debugUrl: "https://maksnikulnikov.github.io/GardenDesigner/?debug=1",
@@ -39,7 +78,7 @@ const playables = [
       "Client-provided sound/3D asset pack integrated into a custom pipeline; all UI visuals and gameplay effects were designed and implemented independently.",
   },
   {
-    title: "Playable 4: Playable Dice",
+    title: "Case Study 7: Playable Dice",
     role: "Role: Solo developer (procedural systems, simulation loop, 3D UX)",
     demoUrl: "https://maksnikulnikov.github.io/playable-dice/",
     debugUrl: "https://maksnikulnikov.github.io/playable-dice/?debug=1",
