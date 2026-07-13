@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "Idle Breaker Playable",
-    type: "Cocos playable ad",
+    type: "Cocos interactive web build",
     engine: "Cocos",
     featured: true,
     demoUrl: "https://maksnikulnikov.github.io/idle-breaker-playable/",
@@ -10,7 +10,7 @@ const projects = [
     mobileMedia: "./assets/idle-breaker-mobile-01.png",
     stack: ["Cocos Creator 3.8.6", "TypeScript", "Vitest", "ESLint"],
     summary:
-      "A production-minded playable ad loop with resource collection, weapon upgrades, destructible gates, Cocos scene contracts, and final MRAID/store flow.",
+      "A production-minded interactive web build with resource collection, weapon upgrades, destructible gates, Cocos scene contracts, and final MRAID/store flow.",
     highlights: [
       "Tested domain state machine separated from scene-facing Cocos components.",
       "Prefab-driven resources, hit feedback, HUD, target hints, and completion flow.",
@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "Tower Balance",
-    type: "Hypercasual web game",
+    type: "Physics-based web app",
     engine: "PixiJS",
     demoUrl: "https://maksnikulnikov.github.io/tower-balance/",
     codeUrl: "https://github.com/MaksNikulnikov/tower-balance",
@@ -27,7 +27,7 @@ const projects = [
     mobileMedia: "./assets/tower-balance-mobile-01.png",
     stack: ["TypeScript", "PixiJS 8", "Matter.js", "Vite", "Playwright", "Yandex Games"],
     summary:
-      "A full hypercasual game with responsive canvas rendering, height progression, physics collapse, localization, ads, and leaderboard adapters.",
+      "A full interactive web app with responsive canvas rendering, height progression, physics collapse, localization, ads, and leaderboard adapters.",
     highlights: [
       "Browser and Yandex platform adapters isolate ads, auth, leaderboards, language, and pause/resume.",
       "Release scripts cover screenshots, video capture, packaging, and Yandex build audit.",
@@ -48,12 +48,12 @@ const projects = [
     highlights: [
       "Renderer-agnostic core mechanics are separated from the Pixi presentation layer.",
       "Animation plans are data-driven and composed through an explicit app boundary.",
-      "Unit and smoke tests focus on gameplay rules and runtime behavior.",
+      "Unit and smoke tests focus on interaction rules and runtime behavior.",
     ],
   },
   {
     title: "Slot Game",
-    type: "Playable slot flow",
+    type: "Slot interface prototype",
     engine: "PixiJS",
     demoUrl: "https://maksnikulnikov.github.io/slot-game/",
     codeUrl: "https://github.com/MaksNikulnikov/slot-game",
@@ -61,7 +61,7 @@ const projects = [
     mobileMedia: "./assets/slot-game-mobile-01.png",
     stack: ["TypeScript", "PixiJS 8", "GSAP", "Spine", "Webpack", "Vitest"],
     summary:
-      "A Pixi slot playable with real loading progress, masked reels, server-authoritative spin results, audio, and Spine character states.",
+      "A Pixi slot interface with real loading progress, masked reels, server-authoritative spin results, audio, and Spine character states.",
     highlights: [
       "Core slot model and state machine avoid Pixi, GSAP, Spine, DOM, and audio imports.",
       "Renderer, audio, and session interfaces keep application orchestration testable.",
@@ -70,23 +70,23 @@ const projects = [
   },
   {
     title: "Fortress Demo",
-    type: "Cocos playable demo",
+    type: "Cocos web build",
     engine: "Cocos",
     demoUrl: "https://maksnikulnikov.github.io/fortress_demo/",
     codeUrl: "https://github.com/MaksNikulnikov/fortress_demo",
     desktopMedia: ["./assets/playable3_01.png", "./assets/playable3_02.png"],
     stack: ["Cocos Creator 3.8.8", "TypeScript"],
     summary:
-      "A compact landscape-only Cocos playable focused on tutorialized gameplay flow, HUD adaptation, and published build polish.",
+      "A compact landscape-only Cocos web build focused on tutorialized interaction flow, HUD adaptation, and published build polish.",
     highlights: [
-      "Config-driven gameplay flow tuned for short sessions.",
+      "Config-driven interaction flow tuned for short sessions.",
       "Responsive HUD adaptation without shifting battlefield composition.",
       "Published web build kept under a tight payload budget.",
     ],
   },
   {
     title: "Garden Designer",
-    type: "3D playable prototype",
+    type: "3D interactive web prototype",
     engine: "Three.js",
     demoUrl: "https://maksnikulnikov.github.io/GardenDesigner/",
     debugUrl: "https://maksnikulnikov.github.io/GardenDesigner/?debug=1",
@@ -95,16 +95,16 @@ const projects = [
     mobileMedia: "./assets/playable1-02.png",
     stack: ["Three.js", "GSAP", "Vite", "Vanilla JS"],
     summary:
-      "A 3D garden design playable with onboarding, asset integration, mobile frame pacing, and custom UI/gameplay feedback.",
+      "A 3D garden design web prototype with onboarding, asset integration, mobile frame pacing, and custom UI feedback.",
     highlights: [
       "Client asset pack integrated into a custom web pipeline.",
-      "Onboarding and effects are built for short playable sessions.",
+      "Onboarding and effects are built for short interactive sessions.",
       "Debug mode keeps tuning and review accessible in the browser.",
     ],
   },
   {
     title: "Playable Dice",
-    type: "Procedural 3D playable",
+    type: "Procedural 3D web prototype",
     engine: "Three.js",
     demoUrl: "https://maksnikulnikov.github.io/playable-dice/",
     debugUrl: "https://maksnikulnikov.github.io/playable-dice/?debug=1",
@@ -113,7 +113,7 @@ const projects = [
     mobileMedia: "./assets/playable2-02.png",
     stack: ["Three.js", "Vite", "Vanilla JS"],
     summary:
-      "A procedural Three.js playable with generated models, responsive controls, and a compact reward loop for short sessions.",
+      "A procedural Three.js web prototype with generated models, responsive controls, and a compact reward loop for short sessions.",
     highlights: [
       "All models are generated in code with no external physics engine.",
       "Custom lightweight physics approximation keeps the runtime small.",

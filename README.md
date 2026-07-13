@@ -1,6 +1,6 @@
-﻿# Playables Portfolio
+# Frontend Portfolio
 
-Public portfolio repository with seven interactive game case studies.
+Public portfolio repository with seven interactive frontend case studies.
 
 ## Local run
 
@@ -8,11 +8,11 @@ Open `index.html` directly or serve with any static server.
 
 ## Structure
 
-- `index.html` — page markup
-- `styles.css` — visual design
-- `app.js` — content model and rendering
-- `assets/` — screenshots and showreel media
-- `tools/` — local media generation helpers
+- `index.html` - page markup
+- `styles.css` - visual design
+- `app.js` - content model and rendering
+- `assets/` - screenshots and showreel media
+- `tools/` - local media generation helpers
 
 ## Showreel
 
